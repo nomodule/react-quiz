@@ -4,6 +4,7 @@ import { Grid, RadioGroup, Button, Box, Typography } from "@material-ui/core";
 
 import Question from "../../components/Question";
 import Answer from "../../components/Answer";
+import Timer from "../../components/Timer";
 
 import { shuffleArray } from "../../helpers";
 
@@ -28,9 +29,16 @@ const QuizScreen = ({
   return (
     <Grid container justify='center'>
       <Grid item md={8}>
-        <Typography variant='subtitle1' component='span'>
-          Question {questionIndex + 1} of 10
-        </Typography>
+        <Box
+          display='flex'
+          justifyContent='space-between'
+          alignItems='baseline'
+        >
+          <Typography variant='subtitle1' component='span'>
+            Question {questionIndex + 1} of 10
+          </Typography>
+          <Timer />
+        </Box>
         <Question text={questionText} />
         <RadioGroup
           aria-label='gender'
